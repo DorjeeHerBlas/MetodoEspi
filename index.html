@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5f5f7"><meta name="description" content="Calcula escalas y acordes, explora tu instrumento y graba tus ideas. Tu estudio musical privado, directamente en el navegador.">
+  <title>METODOESPI2 · Tu espacio de práctica</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#escalas">Ir a las herramientas</a>
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside id="drawer" class="sidebar" aria-label="Menú principal">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">M<span>2</span></span><div><strong>METODOESPI2</strong><small>TU ESPACIO DE PRÁCTICA</small></div><button class="icon-button drawer-close" data-action="menu-close" aria-label="Cerrar menú">×</button></div>
+    <nav aria-label="Secciones">
+      <a href="#escalas"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4zM9 5v14m6-14v14M7 5v8m5-8v8m5-8v8"/></svg>Escalas y acordes</a><a href="#instrumento"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 4 5 5m-3-7-7 7m-2 1c-3-1-6 2-5 5l-1 2 5 5 2-1c3 1 6-2 5-5l-2-1 7-7-3-3-7 7z"/></svg>Instrumento</a><a href="#estudio"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4m4-9v14m5-17v20m5-17v14m4-9v4"/></svg>Estudio</a><a href="#notas"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Notas</a><a href="#afinador"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16a9 9 0 0 1 18 0M12 16l4-7M3 20h18M12 5v2M5 8l2 2m12-2-2 2"/></svg>Afinador</a>
+    </nav>
+    <div id="mini-player"></div><div id="export-controls"></div>
+    <div class="sidebar-footer"><span class="status-dot"></span> Todo se guarda en este navegador.<button class="text-button" data-action="project-import">Abrir proyecto guardado</button><button class="text-button" data-action="help">Ayuda y compatibilidad <span aria-hidden="true">↗</span></button></div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><button class="icon-button menu-button" data-action="menu-open" aria-label="Abrir menú">☰</button><span class="topbar-title">Tu espacio de práctica.</span><span class="local-badge"><span class="status-dot"></span> EN TU DISPOSITIVO</span><button class="icon-button" data-action="refresh" aria-label="Actualizar sin perder el proyecto">↻</button></header>
+    <main>
+      <div class="hero"><div class="eyebrow">TU ESTUDIO MUSICAL</div><h1>Tu música.<br>A tu ritmo<span>.</span></h1><p>Entiende lo que tocas. Construye una base.<br>Encuentra tu propia improvisación.</p><div class="hero-decoration" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><b>♩</b></div></div>
+      <section id="escalas" aria-labelledby="title-escalas"><div class="section-heading"><div><span class="eyebrow">01 / DESCUBRE LA LÓGICA</span><h2 id="title-escalas">Escalas y acordes</h2></div><span class="section-caption">Todo empieza en la tónica.</span></div><div id="explorer"><p>Cargando el motor musical…</p></div></section>
+      <section id="instrumento" aria-labelledby="title-instrumento"><div class="section-heading"><div><span class="eyebrow">02 / LLEVA LA TEORÍA A TUS MANOS</span><h2 id="title-instrumento">Instrumento</h2></div><button class="secondary" data-action="instrument-expand">⤢ Ampliar diapasón</button></div><div id="instrument"></div></section>
+      <section id="estudio" aria-labelledby="title-estudio"><div class="section-heading"><div><span class="eyebrow">03 / DALE FORMA A TU IDEA</span><h2 id="title-estudio">Estudio</h2><p>Un pulso, una base, tu improvisación.</p></div><button class="info" data-action="studio-info" aria-label="Información del estudio">i</button></div><div id="metronome"></div><div id="studio"></div><div id="piano" class="piano-panel"></div></section>
+      <section id="notas" aria-labelledby="title-notas"><div class="section-heading"><div><span class="eyebrow">04 / NO DEJES ESCAPAR LA IDEA</span><h2 id="title-notas">Notas</h2></div><span id="memo-status" class="muted">Guardado local</span></div><div class="panel memo-panel"><label class="sr-only" for="memo">Letras e ideas de tu proyecto</label><textarea id="memo" placeholder="Una letra, un acorde, una idea que no quieres olvidar…" rows="9" spellcheck="true"></textarea><div class="memo-footer"><span id="memo-count">0 caracteres</span><button class="text-button" data-action="pdf-export">Descargar PDF del proyecto ↗</button></div></div></section>
+      <section id="afinador" aria-labelledby="title-afinador"><div class="section-heading"><div><span class="eyebrow">05 / ENCUENTRA EL CENTRO</span><h2 id="title-afinador">Afinador</h2></div><span class="section-caption">Escucha cromática · referencia ajustable</span></div><div id="tuner"></div></section>
+      <footer class="main-footer"><span>METODOESPI2</span><p>Hecho para practicar, entender y crear.<br>Tus grabaciones y notas permanecen en tu dispositivo.</p><a href="#escalas">Volver al principio ↑</a></footer>
+    </main>
+  </div>
+  <dialog id="modal"><div id="modal-body"></div></dialog><div id="toasts" role="status" aria-live="polite"></div>
+  <input id="audio-file" type="file" accept="audio/*,.m4a,.mp3,.wav,.ogg,.aac" hidden><input id="project-file" type="file" accept=".json,application/json" hidden>
+  <script src="./vendor/jspdf/jspdf.umd.min.js" defer></script><script src="./vendor/jszip/jszip.min.js" defer></script>
+  <script type="module" src="./src/app.mjs"></script>
+  <noscript><p class="panel">Activa JavaScript para utilizar el estudio. El procesamiento musical y las grabaciones se realizan en tu navegador.</p></noscript>
+</body></html>

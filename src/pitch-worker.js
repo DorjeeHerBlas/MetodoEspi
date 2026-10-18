@@ -1,0 +1,1 @@
+let detector;onmessage=async e=>{try{detector??=(await import('./pitch.mjs')).detectPitch;const pitch=detector(new Float32Array(e.data.buffer),e.data.rate,e.data.reference);postMessage({pitch,id:e.data.id})}catch(error){postMessage({pitch:null,error:error.message})}};
