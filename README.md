@@ -1,6 +1,6 @@
 # METODOESPI2 · Web para GitHub Pages
 
-Versión web estática del estudio musical, con interfaz clara inspirada en iOS: tipografía del sistema, tarjetas blancas, azul de acento y controles segmentados. Funciona en ordenador, Android y iPhone desde el navegador. No requiere WordPress, base de datos remota, claves de API ni servidor de aplicación. El micrófono, la síntesis, la mezcla y la exportación se procesan en el dispositivo.
+Versión web estática del estudio musical, con tipografía del sistema, superficies lavanda y melocotón, cabecera y menú en tinta, controles segmentados y animaciones suaves. El movimiento respeta la preferencia del dispositivo de reducir animaciones. Funciona en ordenador, Android y iPhone desde el navegador. No requiere WordPress, base de datos remota, claves de API ni servidor de aplicación. El micrófono, la síntesis, la mezcla y la exportación se procesan en el dispositivo.
 
 ## Subir el ZIP preparado
 
@@ -16,12 +16,12 @@ El ZIP incluye solamente la web y las licencias. No contiene grabaciones persona
 
 ## Uso
 
-- **Escalas y acordes**: 14 escalas, 12 tónicas, notación latina/internacional y sostenidos/bemoles. Fórmulas T/ST y grados; tres intentos y revelación explícita. Construcción por columnas con filas opcionales de terceras, quintas, séptimas y novenas, conservando las respuestas al añadir/quitar filas.
+- **Escalas y acordes**: 14 escalas, 12 tónicas, notación latina/internacional y sostenidos/bemoles. Fórmulas T/ST siempre visibles. Las notas suenan al elegirlas. Tras tres fallos de escala aparece una comparación roja/verde con la respuesta correcta, también exportable a PDF. Los acordes tienen grados romanos y una matriz ampliable con acceso a Pistas. Las pentatónicas y blues utilizan columnas variables y notas reales de la escala, con nombres según sus intervalos, sin forzar siete grados. Las filas adicionales son opcionales y conservan respuestas e intentos.
 - **Instrumento**: distintos instrumentos y afinaciones, doce trastes, ajuste por cuerda, vista para zurdos y ampliación sin interrumpir el audio. La orientación automática depende del navegador; también puedes girar el teléfono manualmente.
-- **Estudio**: metrónomo con acentos, subdivisión y práctica progresiva; dos pistas independientes; reproducción conjunta desde el mismo reloj; base repetida bajo el solo; cuenta de entrada con otro timbre; importación, recorte no destructivo y ajuste de latencia de 1/10 ms.
-- **Piano roll**: cuadrícula dispersa que crece, inserción de acordes, notas dibujadas y envío a Pista 1, Pista 2 o Ambas. Las teclas y casillas se iluminan al reproducir las secuencias generadas. Las grabaciones de micrófono no se convierten en MIDI.
-- **Notas**: texto con guardado local. **Afinador** cromático con referencia de La4 ajustable, feedback verde/rojo y nota de referencia.
-- **Exportar**: mezcla de ambas pistas en WAV o MP3 real a 192 kbps. **Proyecto ZIP + PDF** incluye esa mezcla, un PDF con escala, acordes y texto, y `proyecto.json` con las dos pistas y los datos editables. **Abrir proyecto** recupera ese ZIP. Sin audio también puedes exportar el proyecto y el PDF.
+- **Estudio**: metrónomo con acentos, subdivisión y práctica progresiva; compases habituales y escritos como `7/8` o `3+2+2/8` (1–32 pulsos, denominadores 1/2/4/8/16); dos pistas independientes; reproducción conjunta desde el mismo reloj; base repetida bajo el solo; cuenta de entrada con otro timbre y botón de activación al reproducir, independiente de grabación; volumen individual real en escucha/mezcla; importación, recorte no destructivo con escucha del original/selección, pausa y seek, y ajuste de latencia de 1/10 ms. El mini reproductor añade bucles y barra de posición por pista.
+- **Piano roll**: varias ideas en pestañas con nombre, renombrado y duplicado, guardadas aunque no ocupen pistas. Escuchar idea permite preescucha independiente. Cuadrícula dispersa que crece, inserción de acordes, notas dibujadas y envío a Pista 1, Pista 2 o Ambas. Todos los borradores se adaptan al compás y tempo del metrónomo. En horizontal, el teclado se desplaza verticalmente por alturas y horizontalmente por tiempo, con acceso al reproductor. Las teclas y casillas se iluminan al reproducir las secuencias generadas. Las grabaciones de micrófono no se convierten en MIDI.
+- **Progresiones**: lista optativa de progresiones comunes y texto personalizado, incluidos en el PDF. **Notas**: texto con guardado local. **Afinador** cromático con referencia de La4 ajustable, feedback verde/rojo, nota de referencia y marcas de afinación visibles incluso antes de detectar una nota.
+- **Exportar**: mezcla de ambas pistas en WAV o MP3 real a 192 kbps. **Proyecto ZIP + PDF** incluye esa mezcla, un PDF cuyo contenido eliges (escalas/corrección, acordes, instrumento, todas las ideas de piano, progresiones y notas), y `proyecto.json` con las dos pistas y los datos editables. **Abrir proyecto** recupera ese ZIP con todas las pestañas y pistas, independientemente de las secciones seleccionadas para el PDF. Sin audio también puedes exportar el proyecto y el PDF.
 
 Permite el micrófono cuando pulses Grabar o Iniciar afinador. GitHub Pages proporciona HTTPS, necesario para la captura. Los formatos de importación los decodifica el navegador: WAV/MP3 se han probado; M4A/AAC/OGG dependen de los códecs del dispositivo. La exportación WAV/MP3 no depende de esos códecs.
 
@@ -52,7 +52,7 @@ Para probar el ZIP ya descomprimido, también puedes ejecutar `python -m http.se
 
 ## Mantener la teoría compartida con Android
 
-`music-data.json` se genera con el motor real Kotlin de `shared`, sin recalcular otra teoría independiente en JavaScript. Incluye 336 combinaciones de escala/tónica/escritura y 9.240 acordes parciales. `music-source.json` y las pruebas verifican que el catálogo corresponde al código musical.
+`music-data.json` se genera con el motor real Kotlin de `shared`, sin recalcular otra teoría independiente en JavaScript. Incluye 336 combinaciones de escala/tónica/escritura; la capa web de armonización conserva los resultados diatónicos de Kotlin y amplía pentatónicas/blues hasta 11.160 prefijos de acordes comprobados, con notas explícitas. `music-source.json` y las pruebas verifican que el catálogo corresponde al código musical.
 
 Desde la raíz del proyecto Android:
 
